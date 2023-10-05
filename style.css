@@ -21,4 +21,34 @@
   position: relative;
   top: 100px;
   left: 550px;
+  animation: dogMov 2.5s infinite linear;
+}
+@keyframes dogMov {
+  0% {
+    left: 580px;
+  }
+  100% {
+    left: -20px
+  }
+}
+
+.jump {
+  animation: jump 1s linear;
+}
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 130px;
+  }
+  50% {
+    top: 80px;
+  }
+  80% {
+    top: 130px;
+  }
+  100% {
+    top: 150px;
+  }
 }
