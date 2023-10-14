@@ -12,4 +12,36 @@ function jump() {
   setTimeout( function() {
     cat.classList.remove('jump')
   }, 300)
-}
+} 
+
+let isAlive =setInterval(function() {
+  let catTop = parseInt(window.getComputedStyle(cat).getPropertyValue('top'));
+  let dogLeft =  parseInt(window.getComputedStyle(dog).getPropertyValue('left'));
+  
+  if(dogLeft < 70 && dogLeft > 0 && catTop >= 140) {
+    alert ('GAME OVER!!!')
+    location.reload();
+    let score = document.getElementById('#score');
+    localStorage.setItem('Result', score)
+    
+  }
+}, 10)
+
+let score = document.querySelector('#score');
+
+let startCountUp = setInterval(countUp, 0);
+
+
+let totalScore = 0;
+
+document.addEventListener('DOMContentLoaded', renderGame());
+
+function renderGame() {
+countUp();
+};
+
+function countUp(){
+  totalScore++;
+  score.innerText = totalScore;
+};
+
