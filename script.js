@@ -22,7 +22,7 @@ let isAlive =setInterval(function() {
     alert ('GAME OVER!!!')
     location.reload();
     let score = document.getElementById('#score');
-    localStorage.setItem('Result', score)
+    localStorage.setItem('Result', score);
     
   }
 }, 10)
