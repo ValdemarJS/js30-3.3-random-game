@@ -21,8 +21,9 @@ let isAlive =setInterval(function() {
   if(dogLeft < 70 && dogLeft > 0 && catTop >= 140) {
     alert ('GAME OVER!!!')
     location.reload();
-    let score = document.getElementById('#score');
-    localStorage.setItem('Result', score);
+    let score = document.querySelector('#score');
+    let scoreLocal = JSON.stringify(score);
+    localStorage.setItem('Result', scoreLocal);
     
   }
 }, 10)
